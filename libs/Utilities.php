@@ -488,24 +488,24 @@ class Utilities
         // replace with php
         $content = str_replace('{{language}}', '<?php print $language; ?>', $content);
         
-        $local = new DateTimeZone($site['TimeZone']);
+	        $local = new DateTimeZone($site['TimeZone']);
 		// create a friendly date
         $date = DateTime::createFromFormat('Y-m-d H:i:s', $page['LastModifiedDate']);
 		$date->setTimezone($local);
-		$readable = $date->format('D, M d y h:i a');
+		$readable = $date->format('d-m-Y');
 		
 		$content = str_replace('{{date}}', $readable, $content);
 		
         // create a friendly event date
-        $eventBeginDate = DateTime::createFromFormat('Y-m-d H:i:s', $page['BeginDate']);
+        	$eventBeginDate = DateTime::createFromFormat('Y-m-d H:i:s', $page['BeginDate']);
 		if($eventBeginDate!=null)
 		{
 			$eventBeginDate->setTimezone($local);
-			$readable = $eventBeginDate->format('D, M d y h:i a');
-			
-			$content = str_replace('{{event-begin-date}}', $readable, $content);		
-		}
+			$readable = $eventBeginDate->format('d-m-Y');
 		
+			$content = str_replace('{{event-begin-date}}', $readable, $content);
+		}
+	
 		// get the author
 		$user = User::GetByUserId($page['LastModifiedBy']);
 		$author = '';

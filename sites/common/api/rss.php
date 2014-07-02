@@ -13,8 +13,7 @@ class RssResource extends Tonic\Resource {
     function publish() {
 
         $siteUniqId = SITE_UNIQ_ID;
-		$root = '../../../';
-
+	$root = '../../../';
 		// publish rss for page types
 		Publish::PublishRssForPageTypes($siteUniqId, $root);
 		// return a json response

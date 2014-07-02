@@ -6,12 +6,9 @@
 	data-orderby="<?php print $orderby; ?>" 
 	data-category="<?php print $category; ?>">
 		<div class="content" data-bind="html:content"></div>
-        <div class="blog-meta">
-			<p>
-				<span data-bind="visible:hasPhoto"><span class="photo" data-bind="attr:{'style': 'background-image: url('+photo+')'}"></span></span>
-                <?php print '<?php print _("Last modified by"); ?>'; ?> <span class="author" data-bind="text:author"></span>
-                <span data-bind="text:lastModifiedReadable" class="last-modified-date"></span>
-                <a data-bind="attr:{'href':url}"><?php print '<?php print _("Permanent Link"); ?>'; ?></a>
+
+        <div class="blog-meta"><p>
+                <?php print '<?php print _("Initialement publié le "); ?>'; ?><span data-bind="text:beginDateReadable" class="last-modified-date"></span>
 			</p>
         </div>
 </div>
@@ -20,6 +17,6 @@
 
 <?php if($pageresults == 'true'){ ?>
 	<div class="page-results">
-		<button id="pager-<?php print $listid; ?>" class="btn btn-default" data-id="<?php print $listid; ?>"><?php print '<?php print _("Older posts"); ?>'; ?></button>
+		<button id="pager-<?php print $listid; ?>" class="btn btn-default" data-id="<?php print $listid; ?>"><?php print '<?php print _("Lire plus"); ?>'; ?></button>
 	</div>
 <?php } ?>

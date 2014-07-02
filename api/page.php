@@ -278,7 +278,7 @@ class PageContentResource extends Tonic\Resource {
             }
             else{ // create default content for the page
                 $page = Page::GetByPageUniqId($pageUniqId); 
-                $content = '<div id="block-1" class="block row"><div class="col col-md-12"><h1>'.strip_tags(html_entity_decode($page['Name'])).'</h1><p>'.strip_tags(html_entity_decode($page['Description'])).'</p></div></div>';
+                $content = '<div id="block-1" class="block row"><div class="col col-md-12"><h3>'.strip_tags(html_entity_decode($page['Name'])).'</h3><p>'.strip_tags(html_entity_decode($page['Description'])).'</p></div></div>';
             }
 
             $response = new Tonic\Response(Tonic\Response::OK);
@@ -1013,10 +1013,10 @@ class PageBlogResource extends Tonic\Resource {
 		}
 
         if($orderBy=='Created'){ // need to check these to prevent SQL injections
-            $orderBy = 'Pages.Created DESC';
+            $orderBy = 'Pages'.$orderBy.' DESC';//'Pages.Created DESC';
         }
         else{
-            $orderBy = 'Pages.Name ASC';
+            $orderBy = 'Pages'.$orderBy.' ASC';//'Pages.Name ASC';
         }
 
         if($pageSize==''){

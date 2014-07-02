@@ -176,11 +176,11 @@ class PageBlogResource extends Tonic\Resource {
         	$language = $request['language'];
 		}
 
-        if($orderBy=='Created' or $orderBy=='BeginDate'){// need to check these to prevent SQL injections
-            $orderBy = $orderBy.' DESC';
+        if($orderBy=='Created' or $orderBy=='BeginDate'){ // need to check these to prevent SQL injections
+            $orderBy = $orderBy.' DESC';//'Pages.Created DESC';
         }
         else{
-            $orderBy = $orderBy.' ASC';
+            $orderBy = $orderBy.' ASC';//'Pages.Name ASC';
         }
 
         if($pageSize==''){
@@ -233,19 +233,21 @@ class PageBlogResource extends Tonic\Resource {
             
             $url = 'http://'.$site['Domain'].'/'.strtolower($pageType['FriendlyId']).'/'.$page['FriendlyId'];
             
+ 
 			$local = new DateTimeZone($site['TimeZone']);
             // create a readable date
             $date = DateTime::createFromFormat('Y-m-d H:i:s', $page['LastModifiedDate']);
 			$date->setTimezone($local);
-			$readable = $date->format('D, M d y h:i a');
+			$readable = $date->format('d-m-Y');
+
+			$readableEventBeginDate = $readable ;
 			
 			// create a readable event date
-			$readableEventBeginDate = $readable;
 			$eventBeginDate = DateTime::createFromFormat('Y-m-d H:i:s', $page['BeginDate']);
-			if(eventBeginDate!=null)
+			if( $eventBeginDate!= null)
 			{
 				$eventBeginDate->setTimezone($local);
-				$readableEventBeginDate = $eventBeginDate->format('D, M d y h:i a');
+				$readableEventBeginDate = $eventBeginDate->format('d-m-Y');
 			}
 			
             $item = array(
@@ -262,8 +264,7 @@ class PageBlogResource extends Tonic\Resource {
                     'Author' => $name,
                     'HasPhoto' => $hasPhoto,
                     'Photo' => $photo
-                );
-                
+                );               
             $fragment = '../fragments/render/'.$page['PageUniqId'].'.php';
 
             if(file_exists($fragment)){
