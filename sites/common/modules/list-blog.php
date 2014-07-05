@@ -19,10 +19,11 @@
                 <?php print '<?php print _("Initialement publié le "); ?>'; ?><span data-bind="text:beginDateReadable" class="last-modified-date"></span>
 			</p>
         </div>
-		<script>
-			addthis.toolbox('#'+pageUniqId+'_toolbox'); 
-		</script>
 </div>
+
+<script type="text/javascript">
+	addthis.toolbox('.addthis_toolbox'); 
+</script>
 
 <p data-bind="visible: <?php print $listid; ?>Loading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> <?php print _("Loading..."); ?></p>
 
