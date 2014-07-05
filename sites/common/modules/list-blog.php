@@ -9,11 +9,11 @@
 
         <div class="blog-meta"><p>
 				<!-- Go to www.addthis.com/dashboard to customize your tools -->
-				<div class="addthis_toolbox addthis_default_style" data-bind="attr:{'addthis:url':url, 'addthis:title':name}">
-					<a class="addthis_button_preferred_1"></a>
-					<a class="addthis_button_preferred_2"></a>
-					<a class="addthis_button_preferred_3"></a>
-					<a class="addthis_button_preferred_4"></a>
+				<div class="addthis_toolbox addthis_default_style addthis_16x16_style" data-bind="attr:{'addthis:url':url, 'addthis:title':name}">
+					<a class="addthis_button_facebook_follow"></a>
+					<a class="addthis_button_twitter_follow"></a>
+					<a class="addthis_button_google_plusone_share"></a>
+					<a class="addthis_button_pinterest_follow"></a>
 					<a class="addthis_button_compact"></a>
 				</div>
                 <?php print '<?php print _("Initialement publié le "); ?>'; ?><span data-bind="text:beginDateReadable" class="last-modified-date"></span>
