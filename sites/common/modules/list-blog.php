@@ -8,22 +8,11 @@
 		<div class="content" data-bind="html:content"></div>
 
         <div class="blog-meta"><p>
-				<!-- Go to www.addthis.com/dashboard to customize your tools -->
-				<div class="addthis_toolbox addthis_default_style addthis_16x16_style" data-bind="attr:{'id':pageUniqId+'_toolbox', 'addthis:url':url, 'addthis:title':name}">
-					<a class="addthis_button_facebook_follow"></a>
-					<a class="addthis_button_twitter_follow"></a>
-					<a class="addthis_button_google_plusone_share"></a>
-					<a class="addthis_button_pinterest_follow"></a>
-					<a class="addthis_button_compact"></a>
-				</div>
                 <?php print '<?php print _("Initialement publié le "); ?>'; ?><span data-bind="text:beginDateReadable" class="last-modified-date"></span>
+				<a data-bind="attr:{'href':url}"><?php print '<?php print _("Lien permanent"); ?>'; ?></a>
 			</p>
         </div>
 </div>
-
-<script type="text/javascript">
-	addthis.toolbox('.addthis_toolbox'); 
-</script>
 
 <p data-bind="visible: <?php print $listid; ?>Loading()" class="list-loading"><i class="fa fa-spinner fa-spin"></i> <?php print _("Loading..."); ?></p>
 
