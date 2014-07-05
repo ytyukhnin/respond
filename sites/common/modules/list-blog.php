@@ -9,7 +9,7 @@
 
         <div class="blog-meta"><p>
 				<!-- Go to www.addthis.com/dashboard to customize your tools -->
-				<div class="addthis_sharing_toolbox" data-bind="attr:{'data-url':url}" data-bind="attr:{'data-title':text:name}"></div>
+				<div class="addthis_sharing_toolbox" data-bind="attr:{'data-url':url, 'data-title':name}"></div>
                 <?php print '<?php print _("Initialement publié le "); ?>'; ?><span data-bind="text:beginDateReadable" class="last-modified-date"></span>
 			</p>
         </div>
