@@ -424,13 +424,13 @@ class PageCalendarResource extends Tonic\Resource {
             $begin = DateTime::createFromFormat('Y-m-d H:i:s', $page['BeginDate']);
             $local = new DateTimeZone($site['TimeZone']);
 			$begin->setTimezone($local);
-			$beginReadable = $begin->format('D, M d y h:i a');
+			$beginReadable = $begin->format('d-m-Y H:i');
 			
 			// create a readable end date
             $end = DateTime::createFromFormat('Y-m-d H:i:s', $page['EndDate']);
             $local = new DateTimeZone($site['TimeZone']);
 			$end->setTimezone($local);
-			$endReadable = $end->format('D, M d y h:i a');
+			$endReadable = $end->format('d-m-Y H:i');
 			
             $item = array(
                     'PageUniqId'  => $page['PageUniqId'],

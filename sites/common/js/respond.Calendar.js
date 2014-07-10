@@ -112,7 +112,7 @@ respond.Calendar.AddEvent = function(el, name, description, url, beginDate, endD
 	var m_begin = moment(beginDate, "YYYY-MM-DD HH:mm:ss");
 	var m_end = moment(endDate, "YYYY-MM-DD HH:mm:ss");
 	
-	var time = m_begin.format('h:mm a') + ' - ' + m_end.format('h:mm a')
+	var time = m_begin.format('HH:mm') + ' - ' + m_end.format('HH:mm')
 
 	var event = '<div class="event">' +
 					'<h4><a href="' + url + '">' + name + '</a></h4>' +
