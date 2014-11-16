@@ -17,6 +17,7 @@
 	require_once 'transaction.php';
 	require_once 'menu.php';
 	require_once 'rss.php';
+	require_once 'sitemap.php';
         
     // set REQUEST_URI as the default $uri
     $uri = $_SERVER['REQUEST_URI'];
