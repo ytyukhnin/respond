@@ -43,7 +43,7 @@
     }
     
 	// font library
-	define('FONT', 'http://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700|Inconsolata');
+	define('FONT', 'https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700|Inconsolata');
 	
 	// bootsrap css libraries
 	define('BOOTSTRAP_CSS', '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css');
